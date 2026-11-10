@@ -1,45 +1,56 @@
 package model;
 
 public class Contract {
-    private String first_Name;
-    private String last_Name;
+    private String firstName;
+    private String lastName;
     private String  IIN;
-    private double sum_Of_Contract;
+    private double sumOfContract;
+    private double loanTerm;
 
     public void setFirst_Name(String first_Name) {
         if (first_Name == null || first_Name.isBlank()) {
-            throw new IllegalArgumentException("Your first name cannot blank or null");
+            throw new IllegalArgumentException("Your first name cannot be blank or null");
         }
-        this.first_Name = first_Name;
+        this.firstName = first_Name;
     }
 
     public void setLast_Name(String last_Name) {
         if (last_Name == null || last_Name.isBlank()) {
-            throw new IllegalArgumentException("Your last name cannot blank or null");
+            throw new IllegalArgumentException("Your last name cannot be blank or null");
         }
-        this.last_Name = last_Name;
+        this.lastName = last_Name;
     }
 
     public void setIIN(String IIN) {
         if (IIN == null || IIN.isBlank()) {
+            throw new IllegalArgumentException("Your iin cannot be blank");
+        }
+        if (IIN.length() != 12) {
             throw new IllegalArgumentException("Your iin must contain exactly 12 digits");
         }
         this.IIN = IIN;
     }
 
-    public void setSum_Of_Contract(double sum_Of_Contract) {
-        if (!Double.isFinite(sum_Of_Contract) || sum_Of_Contract <= 0) {
+    public void setLoan_Term(double loanTerm) {
+        if (!Double.isFinite(loanTerm) || loanTerm <= 0) {
+            throw new IllegalArgumentException("Loan term must be finite and positive");
+        }
+        this.loanTerm = loanTerm;
+    }
+
+    public void setSum_Of_Contract(double sumOfContract) {
+        if (!Double.isFinite(sumOfContract) || sumOfContract <= 0) {
             throw new IllegalArgumentException("Sum of contract must be positive");
         }
-        this.sum_Of_Contract = sum_Of_Contract;
+        this.sumOfContract = sumOfContract;
     }
 
     public String getFirst_Name() {
-        return first_Name;
+        return firstName;
     }
 
     public String getLast_Name() {
-        return last_Name;
+        return lastName;
     }
 
     public String getIIN() {
@@ -47,6 +58,10 @@ public class Contract {
     }
 
     public double getSum_Of_Contract() {
-        return sum_Of_Contract;
+        return sumOfContract;
+    }
+
+    public double getLoanTerm() {
+        return loanTerm;
     }
 }

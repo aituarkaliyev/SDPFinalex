@@ -1,6 +1,5 @@
 package model;
 
-import Visitor.ContractVisitor;
 import java.util.Objects;
 
 public class Contract {

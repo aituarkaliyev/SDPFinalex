@@ -3,7 +3,6 @@ import Builder.CreditContract;
 import Builder.LoanContract;
 import Observer.FraudAndAuditLogger;
 import Observer.Observer;
-import facade.BankSystemFacade;
 import strategy.CreditInterestStrategy;
 import strategy.InterestStrategy;
 import strategy.LoanInterestStrategy;

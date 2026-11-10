@@ -1,3 +1,5 @@
+package Decorator;
+
 public class NotarySignedDecorator extends ContractWrapper {
     public NotarySignedDecorator(Contract contract) {
         super(contract);

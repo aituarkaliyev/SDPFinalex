@@ -1,6 +1,8 @@
+package Observer;
+
 public class FraudAndAuditLogger implements Observer {
     @Override
     public void update(String message) {
-        System.out.println("[Observer Log]: " + message);
+        System.out.println("[Observer.Observer Log]: " + message);
     }
 }

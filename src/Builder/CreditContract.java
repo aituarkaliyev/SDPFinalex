@@ -1,14 +1,16 @@
-public class LoanContract implements ContractBuilder {
+package Builder;
+
+public class CreditContract implements ContractBuilder {
     private Contract contract = new Contract();
 
     @Override
-    public ContractBuilder setFirst_Name(String first_Name) {
-        contract.setFirst_Name(first_Name); return this;
+    public ContractBuilder setFirst_Name(String firstName) {
+        contract.setFirst_Name(firstName); return this;
     }
 
     @Override
-    public ContractBuilder setLast_Name(String last_Name) {
-        contract.setLast_Name(last_Name); return this;
+    public ContractBuilder setLast_Name(String lastName) {
+        contract.setLast_Name(lastName); return this;
     }
 
     @Override

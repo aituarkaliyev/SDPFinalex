@@ -1,3 +1,5 @@
+package Decorator;
+
 public class ContractWrapper implements IContract {
     protected Contract contract;
 

@@ -1,3 +1,5 @@
+package strategy;
+
 public class LoanInterestStrategy implements InterestStrategy {
     @Override
     public double calculateInterest(double sum) {

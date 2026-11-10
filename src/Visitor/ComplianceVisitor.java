@@ -1,3 +1,5 @@
+package Visitor;
+
 public class ComplianceVisitor implements ContractVisitor {
     @Override
     public void visit(Contract contract) {

@@ -1,3 +1,5 @@
+package model;
+
 public class Contract {
     private String first_Name;
     private String last_Name;

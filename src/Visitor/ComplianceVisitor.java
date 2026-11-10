@@ -1,5 +1,7 @@
 package Visitor;
 
+import model.Contract;
+
 public class ComplianceVisitor implements ContractVisitor {
     @Override
     public void visit(Contract contract) {
@@ -12,7 +14,7 @@ public class ComplianceVisitor implements ContractVisitor {
         if (contract.getSum_Of_Contract() > 5000000.0) {
             System.out.println("[Compliance ALERT] High-value contract (" + contract.getSum_Of_Contract() + ") requires National Bank financial monitoring report!");
         } else {
-            System.out.println("[Compliance OK] Contract amount is within standard limits.");
+            System.out.println("[Compliance OK] model.Contract amount is within standard limits.");
         }
     }
 }

@@ -1,5 +1,7 @@
 package Decorator;
 
+import model.Contract;
+
 public class NotarySignedDecorator extends ContractWrapper {
     public NotarySignedDecorator(Contract contract) {
         super(contract);

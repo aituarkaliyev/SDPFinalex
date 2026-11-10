@@ -1,5 +1,7 @@
 package Builder;
 
+import model.Contract;
+
 public class CreditContract implements ContractBuilder {
     private Contract contract = new Contract();
 

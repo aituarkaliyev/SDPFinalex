@@ -10,18 +10,18 @@ public class Contract {
     private double sumOfContract;
     private double loanTerm;
 
-    public void setFirst_Name(String first_Name) {
-        if (first_Name == null || first_Name.isBlank()) {
+    public void setFirst_Name(String firstName) {
+        if (firstName == null || firstName.isBlank()) {
             throw new IllegalArgumentException("Your first name cannot be blank or null");
         }
-        this.firstName = first_Name;
+        this.firstName = firstName;
     }
 
-    public void setLast_Name(String last_Name) {
-        if (last_Name == null || last_Name.isBlank()) {
+    public void setLast_Name(String lastName) {
+        if (lastName == null || lastName.isBlank()) {
             throw new IllegalArgumentException("Your last name cannot be blank or null");
         }
-        this.lastName = last_Name;
+        this.lastName = lastName;
     }
 
     public void setIIN(String IIN) {

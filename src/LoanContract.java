@@ -12,7 +12,7 @@ public class LoanContract implements ContractBuilder {
     }
 
     @Override
-    public ContractBuilder setIIN(int IIN) {
+    public ContractBuilder setIIN(String IIN) {
         contract.setIIN(IIN); return this;
     }
 

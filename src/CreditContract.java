@@ -3,17 +3,17 @@ public class CreditContract implements ContractBuilder {
 
     @Override
     public ContractBuilder setFirst_Name(String firstName) {
-        return null;
+        contract.setFirst_Name(firstName); return this;
     }
 
     @Override
     public ContractBuilder setLast_Name(String lastName) {
-        return null;
+        contract.setLast_Name(lastName); return this;
     }
 
     @Override
-    public ContractBuilder setIIN(int IIN) {
-        return null;
+    public ContractBuilder setIIN(String IIN) {
+        contract.setIIN(IIN); return this;
     }
 
     @Override

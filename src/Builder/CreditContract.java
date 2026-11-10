@@ -3,38 +3,43 @@ package Builder;
 import model.Contract;
 
 public class CreditContract implements ContractBuilder {
-    private Contract contract;
+    private Contract creditContract;
 
     public CreditContract() {
         this.reset();
     }
 
     public ContractBuilder reset() {
-        this.contract = new Contract(); return this;
+        this.creditContract = new Contract(); return this;
     }
 
     @Override
     public ContractBuilder setFirst_Name(String firstName) {
-        contract.setFirst_Name(firstName); return this;
+        creditContract.setFirst_Name(firstName); return this;
     }
 
     @Override
     public ContractBuilder setLast_Name(String lastName) {
-        contract.setLast_Name(lastName); return this;
+        creditContract.setLast_Name(lastName); return this;
     }
 
     @Override
     public ContractBuilder setIIN(String IIN) {
-        contract.setIIN(IIN); return this;
+        creditContract.setIIN(IIN); return this;
     }
 
     @Override
     public ContractBuilder setSum(double sum) {
-        contract.setSum_Of_Contract(sum); return this;
+        creditContract.setSum_Of_Contract(sum); return this;
+    }
+
+    @Override
+    public ContractBuilder setLoanTerm(double loanTerm) {
+        creditContract.setLoan_Term(loanTerm); return this;
     }
 
     @Override
     public Contract buildContract() {
-        return contract;
+        return creditContract;
     }
 }

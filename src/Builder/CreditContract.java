@@ -1,3 +1,5 @@
+package Builder;
+
 public class CreditContract implements ContractBuilder {
     private Contract contract;
 

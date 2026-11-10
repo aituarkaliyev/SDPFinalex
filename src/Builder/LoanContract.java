@@ -1,3 +1,5 @@
+package Builder;
+
 public class LoanContract implements ContractBuilder {
     private Contract loan_Contract;
 

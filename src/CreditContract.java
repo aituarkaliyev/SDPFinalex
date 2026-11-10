@@ -1,5 +1,13 @@
 public class CreditContract implements ContractBuilder {
-    private Contract contract = new Contract();
+    private Contract contract;
+
+    public CreditContract() {
+        this.reset();
+    }
+
+    public ContractBuilder reset() {
+        this.contract = new Contract(); return this;
+    }
 
     @Override
     public ContractBuilder setFirst_Name(String firstName) {

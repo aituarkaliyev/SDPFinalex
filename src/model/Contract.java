@@ -28,7 +28,7 @@ public class Contract {
         if (IIN == null || IIN.isBlank()) {
             throw new IllegalArgumentException("Your iin cannot be blank");
         }
-        if (IIN.length() != 12) {
+        if (!IIN.matches("\\d{12}")) {
             throw new IllegalArgumentException("Your iin must contain exactly 12 digits");
         }
         this.IIN = IIN;

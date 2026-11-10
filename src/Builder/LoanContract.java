@@ -13,7 +13,6 @@ public class LoanContract implements ContractBuilder {
         this.loan_Contract = new Contract(); return this;
     }
 
-
     @Override
     public ContractBuilder setFirst_Name(String first_Name) {
         loan_Contract.setFirst_Name(first_Name); return this;
@@ -32,6 +31,11 @@ public class LoanContract implements ContractBuilder {
     @Override
     public ContractBuilder setSum(double sum) {
         loan_Contract.setSum_Of_Contract(sum); return this;
+    }
+
+    @Override
+    public ContractBuilder setLoanTerm(double loanTerm) {
+        loan_Contract.setLoan_Term(loanTerm); return this;
     }
 
     @Override

@@ -7,5 +7,6 @@ public interface ContractBuilder {
     ContractBuilder setLast_Name(String lastName);
     ContractBuilder setIIN(String IIN);
     ContractBuilder setSum(double sum);
+    ContractBuilder setLoanTerm(double loanTerm);
     Contract buildContract();
 }

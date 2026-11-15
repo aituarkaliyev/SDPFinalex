@@ -69,25 +69,6 @@ public class Main {
         System.out.printf("Loan amount: %,.0f%n", mortgageContract.getSumOfContract());
         System.out.println("\n");
 
-        BankAccount[] accounts = new BankAccount[] {
-                new SavingsAccount(5_000_000),
-                new LoanAccount(30_000_000, 40_000_000)
-        };
-        AccountFeeVisitor visitor = new AccountFeeVisitor();
-
-        // Processing accounts
-        for (BankAccount account : accounts) {
-
-            account.accept(visitor);
-
-            AccountFeeResult result = visitor.getResult();
-
-            System.out.println("Account: " + result.getAccountType());
-            System.out.println("Description: " + result.getDescription());
-            System.out.println("Fee: " + result.getFee() + " KZT");
-
-            System.out.println("-------------------------");
-        }
 
     }
 }

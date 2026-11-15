@@ -12,5 +12,3 @@ public class NotarySignedDecorator extends ContractWrapper {
         System.out.println("   [✔] Status: Verified and signed by Certified Notary.");
     }
 }
-
- */

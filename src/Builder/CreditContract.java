@@ -14,12 +14,12 @@ public class CreditContract implements ContractBuilder {
     }
 
     @Override
-    public ContractBuilder setFirst_Name(String firstName) {
+    public ContractBuilder setFirstName(String firstName) {
         creditContract.setFirst_Name(firstName); return this;
     }
 
     @Override
-    public ContractBuilder setLast_Name(String lastName) {
+    public ContractBuilder setLastName(String lastName) {
         creditContract.setLast_Name(lastName); return this;
     }
 
@@ -29,7 +29,7 @@ public class CreditContract implements ContractBuilder {
     }
 
     @Override
-    public ContractBuilder setSum(double sum) {
+    public ContractBuilder setSumOfContract(double sum) {
         creditContract.setSum_Of_Contract(sum); return this;
     }
 
@@ -40,6 +40,8 @@ public class CreditContract implements ContractBuilder {
 
     @Override
     public Contract buildContract() {
-        return creditContract;
+        Contract finishedContract = this.creditContract;
+        this.reset();
+        return finishedContract;
     }
 }

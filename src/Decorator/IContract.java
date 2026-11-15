@@ -1,6 +1,6 @@
 package Decorator;
 
 public interface IContract {
-    void printDetails();
+    void getDescription();
     double getSum();
 }

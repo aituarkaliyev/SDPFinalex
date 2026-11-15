@@ -1,5 +1,10 @@
 package model;
 
+import visitor.ContractVisitor;
+
+import java.util.Objects;
+
+
 public class MortgageContract extends Contract {
     private String address;
     private double downPayment;
@@ -42,5 +47,10 @@ public class MortgageContract extends Contract {
 
     public double getPropertyPrice() {
         return propertyPrice;
+    }
+    @Override
+    public void accept(ContractVisitor visitor) {
+        Objects.requireNonNull(visitor, "Visitor cannot be null");
+        visitor.visitMortgageContract(this);
     }
 }

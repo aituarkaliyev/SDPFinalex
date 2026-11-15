@@ -1,6 +1,10 @@
+import Builder.ContractTemplate;
+import Builder.MortgageLoanContract;
+import Builder.PersonalLoanContract;
 import Facade.BankSystemFacade;
 import model.Contract;
 import model.MortgageContract;
+import visitor.*;
 
 public class Main {
     static void main(String[] args) {

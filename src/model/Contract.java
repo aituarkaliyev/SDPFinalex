@@ -8,8 +8,6 @@ public class Contract {
     private String clientName;
     private double sumOfContract;
     private int durationMonths;
-    private double interestRate;
-
 
     public void setClientName(String clientName) {
         if (clientName == null || clientName.isBlank()) {
@@ -32,13 +30,6 @@ public class Contract {
         this.sumOfContract = sumOfContract;
     }
 
-    public void setInterestRate(double interestRate) {
-        if (!Double.isFinite(interestRate) || interestRate <= 0) {
-            throw new IllegalArgumentException("Rate of contract must be positive and finite");
-        }
-        this.interestRate = interestRate;
-    }
-
     public String getClientName() {
         return clientName;
     }
@@ -49,10 +40,6 @@ public class Contract {
 
     public int getDurationMonths() {
         return durationMonths;
-    }
-
-    public double getInterestRate() {
-        return interestRate;
     }
 
     public void accept(ContractReportVisitor visitor) {

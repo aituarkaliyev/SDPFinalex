@@ -1,5 +1,6 @@
 package model;
 
+import visitor.ContractReportVisitor;
 import visitor.ContractVisitor;
 
 import java.util.Objects;
@@ -49,7 +50,8 @@ public class MortgageContract extends Contract {
         return propertyPrice;
     }
 
-    public void accept(ContractVisitor visitor) {
+    @Override
+    public void accept(ContractReportVisitor visitor) {
         Objects.requireNonNull(visitor, "Visitor cannot be null");
         visitor.visitMortgageContract(this);
     }

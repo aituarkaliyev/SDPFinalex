@@ -3,17 +3,28 @@ package visitor;
 
 import model.Contract;
 import model.MortgageContract;
+import strategy.InterestCalculationStrategy;
 
 public class ContractReportVisitor implements ContractVisitor {
+    private final InterestCalculationStrategy personalStrategy;
+    private final InterestCalculationStrategy mortgageStrategy;
 
     private String report;
+
+    public ContractReportVisitor(
+            InterestCalculationStrategy personalStrategy,
+            InterestCalculationStrategy mortgageStrategy
+    ) {
+        this.personalStrategy = personalStrategy;
+        this.mortgageStrategy = mortgageStrategy;
+    }
 
     @Override
     public void visitContract(Contract contract) {
 
         double amount = contract.getSumOfContract();
-        double interest = amount * contract.getInterestRate() / 100
-                * contract.getDurationMonths() / 12;
+        double interest = personalStrategy.calculateInterest(contract);
+        double rate = 20.0;
 
         report = """
                 ===== CONTRACT REPORT =====
@@ -28,7 +39,7 @@ public class ContractReportVisitor implements ContractVisitor {
                 """.formatted(
                 contract.getClientName(),
                 amount,
-                contract.getInterestRate(),
+                rate,
                 contract.getDurationMonths(),
                 interest,
                 amount + interest
@@ -39,8 +50,8 @@ public class ContractReportVisitor implements ContractVisitor {
     public void visitMortgageContract(MortgageContract contract) {
 
         double amount = contract.getSumOfContract();
-        double interest = amount * contract.getInterestRate() / 100
-                * contract.getDurationMonths() / 12;
+        double interest = mortgageStrategy.calculateInterest(contract);
+        double rate = 12.0;
 
         report = """
                 ===== CONTRACT REPORT =====
@@ -61,6 +72,7 @@ public class ContractReportVisitor implements ContractVisitor {
                 contract.getPropertyPrice(),
                 contract.getDownPayment(),
                 amount,
+                rate,
                 contract.getDurationMonths(),
                 interest,
                 amount + interest

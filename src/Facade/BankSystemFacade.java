@@ -1,4 +1,4 @@
-package facade;
+package Facade;
 
 import Builder.MortgageLoanContract;
 import Builder.PersonalLoanContract;
@@ -124,7 +124,10 @@ public class BankSystemFacade {
     public String generateContractReport(Contract contract) {
         Objects.requireNonNull(contract, "Contract cannot be null");
 
-        ContractReportVisitor visitor = new ContractReportVisitor();
+        ContractReportVisitor visitor = new ContractReportVisitor(
+                new PersonalLoanInterestStrategy(),
+                new MortgageInterestStrategy()
+        );
 
         contract.accept(visitor);
 

@@ -11,14 +11,14 @@ public class Main {
 
         // 1. Create personal loan
         Contract personalLoan = bank.createPersonalLoan(
-                "John Smith",
+                "Aituar",
                 500_000,
                 12
         );
 
         // 2. Create mortgage
         MortgageContract mortgage = bank.createMortgage(
-                "John Smith",
+                "Aldiyar",
                 "Saryarka 4",
                 40_000_000,
                 10_000_000,

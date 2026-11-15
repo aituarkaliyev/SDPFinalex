@@ -1,4 +1,4 @@
-package Facade;
+package facade;
 
 import Builder.MortgageLoanContract;
 import Builder.PersonalLoanContract;

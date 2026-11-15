@@ -1,7 +1,7 @@
 import Builder.ContractTemplate;
 import Builder.MortgageLoanContract;
 import Builder.PersonalLoanContract;
-import Facade.BankSystemFacade;
+import facade.BankSystemFacade;
 import model.Contract;
 import model.MortgageContract;
 import visitor.*;
@@ -12,14 +12,14 @@ public class Main {
 
         // 1. Create personal loan
         Contract personalLoan = bank.createPersonalLoan(
-                "John Smith",
+                "Aldiyar",
                 500_000,
                 12
         );
 
         // 2. Create mortgage
         MortgageContract mortgage = bank.createMortgage(
-                "John Smith",
+                "Aituar",
                 "Saryarka 4",
                 40_000_000,
                 10_000_000,

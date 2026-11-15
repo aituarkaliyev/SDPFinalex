@@ -4,7 +4,7 @@ import strategy.InterestCalculationStrategy;
 import model.Contract;
 
 public class ServiceFeeDecorator extends InterestDecorator {
-    private static final double SERVICE_FEE = 2000.0;
+    private static final double ServiceFee = 2000.0;
 
     public ServiceFeeDecorator(InterestCalculationStrategy wrappedStrategy) {
         super(wrappedStrategy);
@@ -12,6 +12,6 @@ public class ServiceFeeDecorator extends InterestDecorator {
 
     @Override
     public double calculateInterest(Contract contract) {
-        return super.calculateInterest(contract) + SERVICE_FEE;
+        return super.calculateInterest(contract) + ServiceFee;
     }
 }

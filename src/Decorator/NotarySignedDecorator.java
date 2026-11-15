@@ -1,17 +1,15 @@
 package Decorator;
 
 import model.Contract;
-/*
-public class NotarySignedDecorator extends InsuranceContractWrapper {
+
+public class NotarySignedDecorator extends ContractWrapper {
     public NotarySignedDecorator(Contract contract) {
         super(contract);
     }
 
     @Override
-    public void getDescription() {
-        super.getDescription();
+    public void printDetails() {
+        super.printDetails();
         System.out.println("   [✔] Status: Verified and signed by Certified Notary.");
     }
 }
-
- */

@@ -48,7 +48,7 @@ public class MortgageContract extends Contract {
     public double getPropertyPrice() {
         return propertyPrice;
     }
-    @Override
+
     public void accept(ContractVisitor visitor) {
         Objects.requireNonNull(visitor, "Visitor cannot be null");
         visitor.visitMortgageContract(this);

@@ -1,7 +1,6 @@
-import Builder.ContractTemplate;
 import Builder.MortgageLoanContract;
 import Builder.PersonalLoanContract;
-import Facade.BankSystemFacade;
+import facade.BankSystemFacade;
 import model.Contract;
 import model.MortgageContract;
 import visitor.*;

@@ -1,8 +1,8 @@
 package Decorator;
 
-/*
-public class InsuranceContractWrapper implements IContract {
+import model.Contract;
 
+public class InsuranceContractWrapper implements IContract {
     protected Contract contract;
 
     public InsuranceContractWrapper(Contract contract) {
@@ -11,13 +11,11 @@ public class InsuranceContractWrapper implements IContract {
 
     @Override
     public void getDescription() {
-        System.out.println("model.Contract: " + contract.getFirstName() + " " + contract.getLastName() + ", Sum: " + contract.getSumOfContract());
+        System.out.println("model.Contract: " + contract.getFirst_Name() + " " + contract.getLast_Name() + ", Sum: " + contract.getSum_Of_Contract());
     }
 
     @Override
     public double getSum() {
-        return contract.getSumOfContract();
+        return contract.getSum_Of_Contract();
     }
 }
-
- */

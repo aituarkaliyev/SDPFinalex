@@ -1,5 +1,7 @@
 package model;
 
+import visitor.ContractReportVisitor;
+
 import java.util.Objects;
 
 public class Contract {
@@ -51,5 +53,10 @@ public class Contract {
 
     public double getInterestRate() {
         return interestRate;
+    }
+
+    public void accept(ContractReportVisitor visitor) {
+        Objects.requireNonNull(visitor, "Visitor cannot be null");
+        visitor.visitContract(this);
     }
 }

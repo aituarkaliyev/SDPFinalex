@@ -1,74 +1,63 @@
 import Builder.ContractTemplate;
 import Builder.MortgageLoanContract;
 import Builder.PersonalLoanContract;
+import Facade.BankSystemFacade;
 import model.Contract;
 import model.MortgageContract;
 import visitor.*;
 
 public class Main {
     static void main(String[] args) {
-        /*
-        BankSystemFacade bankFacade = new BankSystemFacade();
+        BankSystemFacade bank = new BankSystemFacade();
 
-        Observer fraudLogger = new FraudAndAuditLogger();
-        bankFacade.registerObserver(fraudLogger);
-
-        System.out.println("=== PROCESSING LOAN CONTRACT ===");
-        ContractBuilder loanBuilder = new MortgageLoanContract();
-        InterestStrategy loanStrategy = new LoanInterestStrategy();
-
-        bankFacade.processNewContract(
-                loanBuilder,
-                "Aituar",
-                "Kaliyev",
-                "050112350123",
-                3500000.0,
-                loanStrategy
+        // 1. Create personal loan
+        Contract personalLoan = bank.createPersonalLoan(
+                "John Smith",
+                500_000,
+                12
         );
 
-        System.out.println("\n=== PROCESSING CREDIT CONTRACT ===");
-        ContractBuilder creditBuilder = new CreditContract();
-        InterestStrategy creditStrategy = new CreditInterestStrategy();
+        // 2. Create mortgage
+        MortgageContract mortgage = bank.createMortgage(
+                "John Smith",
+                "Saryarka 4",
+                40_000_000,
+                10_000_000,
+                120
+        );
 
-        bankFacade.processNewContract(
-                creditBuilder,
-                "Dias",
-                "Sarsenov",
-                "040518450987",
-                6200000.0,
-                creditStrategy
-        );*/
-        ContractTemplate director = new ContractTemplate();
+        // 3. Process contracts (Observer)
+        bank.processContract(personalLoan);
+        bank.processContract(mortgage);
 
-        // Personal Loan
-        PersonalLoanContract personalBuilder =
-                new PersonalLoanContract();
+        // 4. Calculate interest (Strategy)
+        double personalInterest =
+                bank.calculateInterest(personalLoan);
 
-        Contract personalContract =
-                director.personalLoanContract(personalBuilder);
+        double mortgageInterest =
+                bank.calculateInterest(mortgage);
 
-        // Mortgage Loan
-        MortgageLoanContract mortgageBuilder =
-                new MortgageLoanContract();
+        System.out.printf("Personal loan interest: %.2f KZT%n",
+                personalInterest);
 
-        MortgageContract mortgageContract =
-                director.mortgageLoanContract(mortgageBuilder);
+        System.out.printf("Mortgage interest: %.2f KZT%n",
+                mortgageInterest);
 
-        // Output
-        System.out.println("=== PERSONAL LOAN ===");
-        System.out.println("Client: " + personalContract.getClientName());
-        System.out.println("Sum: " + personalContract.getSumOfContract());
-        System.out.println("Duration: " + personalContract.getDurationMonths());
+        // 5. Calculate interest with additional services (Decorator)
+        double decoratedInterest =
+                bank.calculateInterestWithServices(
+                        personalLoan,
+                        true,
+                        true
+                );
 
-        System.out.println("\n=== MORTGAGE LOAN ===");
-        System.out.println("Client: " + mortgageContract.getClientName());
-        System.out.println("Duration: " + mortgageContract.getDurationMonths());
-        System.out.println("Address: " + mortgageContract.getAddress());
-        System.out.printf("Down payment: %,.0f%n", mortgageContract.getDownPayment());
-        System.out.printf("Property price: %,.0f%n", mortgageContract.getPropertyPrice());
-        System.out.printf("Loan amount: %,.0f%n", mortgageContract.getSumOfContract());
-        System.out.println("\n");
+        System.out.println("Interest with additional services: "
+                + decoratedInterest);
 
+        // 6. Generate report (Visitor)
+        System.out.println(
+                bank.generateContractReport(mortgage)
+        );
 
     }
 }

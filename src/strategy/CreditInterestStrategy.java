@@ -1,21 +1,12 @@
-
 package strategy;
 
-public class CreditInterestStrategy implements InterestStrategy {
+import model.Contract;
 
-    private static final double INTEREST_RATE = 0.22;
+public class CreditInterestStrategy implements InterestCalculationStrategy {
+    private static final double CreditInterestRATE = 0.20;
 
     @Override
-    public double calculateInterest(double sum) {
-        validateSum(sum);
-        return sum * INTEREST_RATE;
-    }
-
-    private void validateSum(double sum) {
-        if (!Double.isFinite(sum) || sum <= 0) {
-            throw new IllegalArgumentException(
-                    "Contract sum must be a positive finite number"
-            );
-        }
+    public double calculateInterest(Contract contract) {
+        return contract.getSumOfContract() * CreditInterestRATE * contract.getLoanTerm();
     }
 }

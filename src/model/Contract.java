@@ -47,11 +47,11 @@ public class Contract {
         this.sumOfContract = sumOfContract;
     }
 
-    public String getFirst_Name() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getLast_Name() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -59,7 +59,7 @@ public class Contract {
         return IIN;
     }
 
-    public double getSum_Of_Contract() {
+    public double getSumOfContract() {
         return sumOfContract;
     }
 

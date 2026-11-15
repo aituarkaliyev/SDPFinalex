@@ -3,68 +3,54 @@ package model;
 import java.util.Objects;
 
 public class Contract {
-    private String firstName;
-    private String lastName;
-    private String  IIN;
+    private String clientName;
     private double sumOfContract;
-    private double loanTerm;
+    private int durationMonths;
+    private double interestRate;
 
-    public void setFirst_Name(String firstName) {
-        if (firstName == null || firstName.isBlank()) {
-            throw new IllegalArgumentException("Your first name cannot be blank or null");
+
+    public void setClientName(String clientName) {
+        if (clientName == null || clientName.isBlank()) {
+            throw new IllegalArgumentException("Your name cannot be blank or null");
         }
-        this.firstName = firstName;
+        this.clientName = clientName;
     }
 
-    public void setLast_Name(String lastName) {
-        if (lastName == null || lastName.isBlank()) {
-            throw new IllegalArgumentException("Your last name cannot be blank or null");
+    public void setDurationMonths(int durationMonths) {
+        if (durationMonths <= 0) {
+            throw new IllegalArgumentException("Duration must be positive");
         }
-        this.lastName = lastName;
+        this.durationMonths = durationMonths;
     }
 
-    public void setIIN(String IIN) {
-        if (IIN == null || IIN.isBlank()) {
-            throw new IllegalArgumentException("Your iin cannot be blank");
-        }
-        if (!IIN.matches("\\d{12}")) {
-            throw new IllegalArgumentException("Your iin must contain exactly 12 digits");
-        }
-        this.IIN = IIN;
-    }
-
-    public void setLoan_Term(double loanTerm) {
-        if (!Double.isFinite(loanTerm) || loanTerm <= 0) {
-            throw new IllegalArgumentException("Loan term must be finite and positive");
-        }
-        this.loanTerm = loanTerm;
-    }
-
-    public void setSum_Of_Contract(double sumOfContract) {
+    public void setSumOfContract(double sumOfContract) {
         if (!Double.isFinite(sumOfContract) || sumOfContract <= 0) {
-            throw new IllegalArgumentException("Sum of contract must be positive");
+            throw new IllegalArgumentException("Sum of contract must be positive and finite");
         }
         this.sumOfContract = sumOfContract;
     }
 
-    public String getFirst_Name() {
-        return firstName;
+    public void setInterestRate(double interestRate) {
+        if (!Double.isFinite(interestRate) || interestRate <= 0) {
+            throw new IllegalArgumentException("Rate of contract must be positive and finite");
+        }
+        this.interestRate = interestRate;
     }
 
-    public String getLast_Name() {
-        return lastName;
+    public String getClientName() {
+        return clientName;
     }
 
-    public String getIIN() {
-        return IIN;
-    }
-
-    public double getSum_Of_Contract() {
+    public double getSumOfContract() {
         return sumOfContract;
     }
 
-    public double getLoanTerm() {
-        return loanTerm;
+    public int getDurationMonths() {
+        return durationMonths;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
     }
 
     /*public void accept(Visitor.ContractVisitor visitor) {

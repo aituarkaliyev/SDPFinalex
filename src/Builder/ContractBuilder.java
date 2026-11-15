@@ -3,10 +3,8 @@ package Builder;
 import model.Contract;
 
 public interface ContractBuilder {
-    ContractBuilder setFirstName(String firstName);
-    ContractBuilder setLastName(String lastName);
-    ContractBuilder setIIN(String IIN);
+    ContractBuilder setClientName(String firstName);
     ContractBuilder setSumOfContract(double sum);
-    ContractBuilder setLoanTerm(double loanTerm);
+    ContractBuilder setDurationMonths(int durationMonths);
     Contract buildContract();
 }

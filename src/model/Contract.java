@@ -67,8 +67,8 @@ public class Contract {
         return loanTerm;
     }
 
-    public void accept(Visitor.ContractVisitor visitor) {
+    /*public void accept(Visitor.ContractVisitor visitor) {
         Objects.requireNonNull(visitor, "Visitor cannot be null");
         visitor.visit(this);
-    }
+    }*/
 }

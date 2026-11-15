@@ -1,6 +1,5 @@
 package Decorator;
 
-import model.Contract;
 
 public class NotarySignedDecorator extends ContractWrapper {
     public NotarySignedDecorator(Contract contract) {
@@ -13,3 +12,5 @@ public class NotarySignedDecorator extends ContractWrapper {
         System.out.println("   [✔] Status: Verified and signed by Certified Notary.");
     }
 }
+
+ */

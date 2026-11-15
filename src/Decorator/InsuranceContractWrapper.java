@@ -1,6 +1,5 @@
 package Decorator;
 
-import model.Contract;
 /*
 public class InsuranceContractWrapper implements IContract {
 

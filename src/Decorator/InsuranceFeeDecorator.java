@@ -4,7 +4,7 @@ import strategy.InterestCalculationStrategy;
 import model.Contract;
 
 public class InsuranceFeeDecorator extends InterestDecorator {
-    private static final double INSURANCE_RATE = 0.01;
+    private static final double InsuranceRate = 0.01;
 
     public InsuranceFeeDecorator(InterestCalculationStrategy wrappedStrategy) {
         super(wrappedStrategy);
@@ -13,7 +13,7 @@ public class InsuranceFeeDecorator extends InterestDecorator {
     @Override
     public double calculateInterest(Contract contract) {
         double baseInterest = super.calculateInterest(contract);
-        double insurance = contract.getSumOfContract() * INSURANCE_RATE;
+        double insurance = contract.getSumOfContract() * InsuranceRate;
         return baseInterest + insurance;
     }
 }

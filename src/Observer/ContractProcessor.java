@@ -25,7 +25,7 @@ public class ContractProcessor implements ContractSubject {
     }
 
     public void processContract(Contract contract) {
-        System.out.println("Processing contract for client: " + contract.getFirstName() + " " + contract.getLastName());
+        System.out.println("Processing contract for client: " + contract.getClientName());
         notifyObservers(contract);
     }
 }

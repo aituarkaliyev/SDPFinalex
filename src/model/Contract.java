@@ -52,9 +52,4 @@ public class Contract {
     public double getInterestRate() {
         return interestRate;
     }
-
-    /*public void accept(Visitor.ContractVisitor visitor) {
-        Objects.requireNonNull(visitor, "Visitor cannot be null");
-        visitor.visit(this);
-    }*/
 }
